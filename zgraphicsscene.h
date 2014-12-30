@@ -1,0 +1,4 @@
+#ifndef ZGRAPHICSSCENE_H
+#define ZGRAPHICSSCENE_H
+
+#endif // ZGRAPHICSSCENE_H
