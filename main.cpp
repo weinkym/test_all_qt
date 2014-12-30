@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
 #else
     QTextCodec::setCodecForLocale(t);
 #endif
-//    ZTest::test01(a);
+    ZTest::test01(a);
 //    ZTest::test02(a);
 //    ZTest::test03(a);
-    ZTest::test04(a);
+//    ZTest::test04(a);
 }
