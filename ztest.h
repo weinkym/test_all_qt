@@ -9,7 +9,7 @@ public:
     static int test02(QApplication& a);
     static int test03(QApplication& a);
     static int test04(QApplication& a);
-//    static int test03(QApplication& a);
+    static int test05(QApplication& a);
 //    static int test03(QApplication& a);
 
 

@@ -29,7 +29,7 @@
 #include <QGraphicsScene>
 #include <QApplication>
 #include <QUuid>
-
+#include "ztextedit.h"
 class ZTestPublic
 {
 public:

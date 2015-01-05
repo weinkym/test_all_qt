@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QSound>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -19,8 +20,6 @@ MainWindow::MainWindow(QWidget *parent) :
      ui->label->setOpenExternalLinks(true);
 //     ui->label->setText(QString("<a href = %1>%1</a>").arg("www@baidu.com"));
      ui->label->setText(QString("<p><a href=\"mailto:example@example.com\">email</a></p>"));
-
-
 }
 
 MainWindow::~MainWindow()
@@ -37,4 +36,29 @@ void MainWindow::on_btn01_clicked()
 //        player->play();
 //    }
     player->play();
+}
+
+void MainWindow::on_btn02_clicked()
+{
+    qDebug()<<"on_btn02_clicked";
+//    QSound::play(":/music/qq.mp3");
+    QSound::play(":/music/qq.wav");
+}
+
+void MainWindow::on_btn03_clicked()
+{
+    QString text = ui->textEdit_2->toPlainText();
+//    QStringList list = text.split(";");
+//    int count = list.count();
+//    m_textEidt.clear();
+//    for(int i = 0; i < count; ++i)
+//    {
+//        m_textEidt.append(list.at(i));
+//        if(i < count - 1)
+//        {
+//            m_textEidt.insertImage(":/images/1.png");
+//        }
+//    }
+    m_textEidt.insertAllText(text);
+    m_textEidt.show();
 }

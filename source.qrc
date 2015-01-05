@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>music/qq.mp3</file>
         <file>music/qq.wav</file>
+        <file>images/1.png</file>
     </qresource>
 </RCC>

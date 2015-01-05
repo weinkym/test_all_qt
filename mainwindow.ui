@@ -16,6 +16,12 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit_2"/>
+    </item>
+    <item>
      <widget class="QLabel" name="label">
       <property name="text">
        <string>TextLabel</string>
@@ -36,6 +42,20 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn03">
+        <property name="text">
+         <string>btn03</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn02">
+        <property name="text">
+         <string>btn02</string>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QPushButton" name="btn01">

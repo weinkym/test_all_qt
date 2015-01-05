@@ -32,6 +32,13 @@ int ZTest::test04(QApplication &a)
     return a.exec();
 }
 
+int ZTest::test05(QApplication &a)
+{
+    ZTextEdit dlg;
+    dlg.show();
+    return a.exec();
+}
+
 QGraphicsView *ZTest::getView(const QString &text)
 {
     QGraphicsView* view = new QGraphicsView;
