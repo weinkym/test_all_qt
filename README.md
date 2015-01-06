@@ -1,5 +1,8 @@
 test_all_qt
 ===========
 fdsfadsfdsf
-SSSS
-tttasdfa
+<<<<<<< HEAD
+ni hao ya 
+
+adsf
+>>>>>>> feature1
