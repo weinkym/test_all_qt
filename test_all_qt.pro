@@ -18,13 +18,18 @@ SOURCES += main.cpp\
     zgraphicsscene.cpp \
     ztestpublic.cpp \
     ztest.cpp \
-    ztextedit.cpp
+    ztextedit.cpp \
+    zgraphicstextitem.cpp \
+    cgraphicsstateitem.cpp
 
 HEADERS  += mainwindow.h \
     zgraphicsscene.h \
     ztestpublic.h \
     ztest.h \
-    ztextedit.h
+    ztextedit.h \
+    ztest_global.h \
+    zgraphicstextitem.h \
+    cgraphicsstateitem.h
 
 FORMS    += mainwindow.ui
 

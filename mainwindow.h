@@ -8,6 +8,17 @@
 #include "ztestpublic.h"
 #include "ztextedit.h"
 
+#ifndef _DEBUG
+#include "ztest_global.h"
+#define DEBUG_MAINWINDOW_H(X) LOG_DEBUG(X)
+//#define DEBUG_MAINWINDOW_H(X)
+#else
+#define DEBUG_MAINWINDOW_H(X)
+#endif
+
+
+//TEST_DEBUG(DDDD)
+
 namespace Ui {
 class MainWindow;
 }

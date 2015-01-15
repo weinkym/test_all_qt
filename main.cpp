@@ -24,5 +24,5 @@ int main(int argc, char *argv[])
 //    ZTest::test02(a);
 //    ZTest::test03(a);
 //    ZTest::test04(a);
- ZTest::test05(a);
+ ZTest::test06(a);
 }

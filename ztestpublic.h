@@ -30,6 +30,7 @@
 #include <QApplication>
 #include <QUuid>
 #include "ztextedit.h"
+#include "zgraphicstextitem.h"
 class ZTestPublic
 {
 public:

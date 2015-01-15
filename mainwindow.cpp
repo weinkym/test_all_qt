@@ -29,6 +29,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btn01_clicked()
 {
+    DEBUG_MAINWINDOW_H(1);
     qDebug()<<"on_btn01_clicked";
 //    if(!player->isAvailable())
 //    {

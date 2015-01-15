@@ -10,7 +10,7 @@ public:
     static int test03(QApplication& a);
     static int test04(QApplication& a);
     static int test05(QApplication& a);
-//    static int test03(QApplication& a);
+    static int test06(QApplication& a);
 
 
     static QGraphicsView* getView(const QString& text);

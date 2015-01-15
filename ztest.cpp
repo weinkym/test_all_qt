@@ -1,5 +1,8 @@
 #include "ztest.h"
 #include "mainwindow.h"
+#include "zgraphicsscene.h"
+#include "zgraphicstextitem.h"
+#include "cgraphicsstateitem.h"
 
 int ZTest::test01(QApplication &a)
 {
@@ -39,16 +42,34 @@ int ZTest::test05(QApplication &a)
     return a.exec();
 }
 
-QGraphicsView *ZTest::getView(const QString &text)
+int ZTest::test06(QApplication &a)
 {
     QGraphicsView* view = new QGraphicsView;
-    QGraphicsScene* scene = new QGraphicsScene;
+    ZGraphicsScene* scene = new ZGraphicsScene;
+    view->setScene(scene);
+    QGraphicsTextItem* item = scene->addText("MIAO TEST");
+    CGraphicsSateItem* stateItem = new CGraphicsSateItem(item);
+    QRectF rect = stateItem->boundingRect();
+    stateItem->setPos(-1 * rect.width(),0);
+    view->show();
+    return a.exec();
+}
+
+QGraphicsView *ZTest::getView(const QString &text2)
+{
+    QGraphicsView* view = new QGraphicsView;
+    ZGraphicsScene* scene = new ZGraphicsScene;
     view->setScene(scene);
     int height = 0;
     int dY = 30;
-    //    QString text = "<body>在右窗口显示ttttttttt<a href=www.baidu.com><font color=red>www.baidu.com</font></a></body>";
+        QString text = "<body>在右窗口显示ttttttttt<a href=www.baidu.com><font color=red>www.baidu.com</font></a></body>";
     {
-        QGraphicsTextItem* textItem = scene->addText(text) ;
+//        ZGraphicsTextItem* textItem = scene->addText(text) ;
+             ZGraphicsTextItem* textItem = new ZGraphicsTextItem;
+//             textItem->setPlainText(text);
+             scene->addItem(textItem);
+        QObject::connect(textItem,SIGNAL(linkActivated(QString)),scene,SLOT(onLinkActivated(QString)));
+        QObject::connect(textItem,SIGNAL(linkHovered(QString)),scene,SLOT(onLinkHovered(QString)));
         textItem->setHtml(text);
         textItem->setTextInteractionFlags(Qt::TextBrowserInteraction);
         textItem->setPos(0,height);
