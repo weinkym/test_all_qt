@@ -75,7 +75,7 @@ void CGraphicsSateItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         }
         else
         {
-        setState(Successful);
+            setState(Successful);
         }
     }
 }

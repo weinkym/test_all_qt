@@ -3,6 +3,7 @@
 #include "zgraphicsscene.h"
 #include "zgraphicstextitem.h"
 #include "cgraphicsstateitem.h"
+#include "msgfilechatitem.h"
 
 int ZTest::test01(QApplication &a)
 {
@@ -51,6 +52,41 @@ int ZTest::test06(QApplication &a)
     CGraphicsSateItem* stateItem = new CGraphicsSateItem(item);
     QRectF rect = stateItem->boundingRect();
     stateItem->setPos(-1 * rect.width(),0);
+    view->show();
+    return a.exec();
+}
+
+int ZTest::test07(QApplication &a)
+{
+    QGraphicsView* view = new QGraphicsView;
+    ZGraphicsScene* scene = new ZGraphicsScene;
+    view->setScene(scene);
+    //==================================================
+    MsgFileChatItem* item= new MsgFileChatItem;
+    scene->addItem(item);
+   //==================================================
+    view->show();
+    return a.exec();
+}
+
+int ZTest::test08(QApplication &a)
+{
+    QGraphicsView* view = new QGraphicsView;
+    ZGraphicsScene* scene = new ZGraphicsScene;
+    view->setScene(scene);
+    //==================================================
+    QString fileName = QFileDialog::getOpenFileName(0, ("Open File"),
+                                                    "/home",
+                                                    ("Images (*.* *.xpm *.jpg)"));
+    if(fileName.isEmpty())
+    {
+        return -1;
+    }
+    QFileInfo fileInfo(fileName);
+    QFileIconProvider provider;
+    QIcon icon = provider.icon(fileInfo);
+    scene->addPixmap(icon.pixmap(55,55));
+   //==================================================
     view->show();
     return a.exec();
 }

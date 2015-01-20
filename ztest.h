@@ -11,6 +11,8 @@ public:
     static int test04(QApplication& a);
     static int test05(QApplication& a);
     static int test06(QApplication& a);
+    static int test07(QApplication& a);
+    static int test08(QApplication& a);
 
 
     static QGraphicsView* getView(const QString& text);

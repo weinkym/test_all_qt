@@ -29,6 +29,8 @@
 #include <QGraphicsScene>
 #include <QApplication>
 #include <QUuid>
+#include <QFileInfo>
+#include <QFileIconProvider>
 #include "ztextedit.h"
 #include "zgraphicstextitem.h"
 class ZTestPublic

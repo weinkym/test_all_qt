@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     ztest.cpp \
     ztextedit.cpp \
     zgraphicstextitem.cpp \
-    cgraphicsstateitem.cpp
+    cgraphicsstateitem.cpp \
+    msgfilechatitem.cpp
 
 HEADERS  += mainwindow.h \
     zgraphicsscene.h \
@@ -29,9 +30,11 @@ HEADERS  += mainwindow.h \
     ztextedit.h \
     ztest_global.h \
     zgraphicstextitem.h \
-    cgraphicsstateitem.h
+    cgraphicsstateitem.h \
+    msgfilechatitem.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    msgfilewidget.ui
 
 RESOURCES += \
     source.qrc
