@@ -47,6 +47,7 @@ void MsgFileChatItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
     painter->setBrush(brush);
     painter->drawRect(m_rect);
 
+
     QString text = "100%";
     QFont font;
     font.setPixelSize(18);
@@ -122,6 +123,7 @@ void MsgFileChatItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
                     m_state = transfering;
                     this->updateLayout();
                 }
+
             }
         }
     }
