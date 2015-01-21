@@ -3,5 +3,14 @@
         <file>music/qq.mp3</file>
         <file>music/qq.wav</file>
         <file>images/1.png</file>
+        <file>images/cancel.png</file>
+        <file>images/4136_Restricted 2.png</file>
+        <file>images/4138_Screensaver.png</file>
+        <file>images/search.png</file>
+        <file>images/4138_Shutdown.png</file>
+        <file>images/4138_Standby.png</file>
+        <file>images/4147_33.png</file>
+        <file>images/4147_34.png</file>
+        <file>images/4148_12.png</file>
     </qresource>
 </RCC>

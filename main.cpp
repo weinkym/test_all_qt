@@ -23,6 +23,6 @@ int main(int argc, char *argv[])
 //    ZTest::test01(a);
 //    ZTest::test02(a);
 //    ZTest::test03(a);
-//    ZTest::test04(a);
- ZTest::test08(a);
+    ZTest::test07(a);
+// ZTest::test08(a);
 }
