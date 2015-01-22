@@ -14,10 +14,12 @@ class MsgFileChatItem : public QGraphicsObject
 public:
     enum State
     {
-        undefind,
-        cancel,
-        scuccessful,
-        transfering
+        Undefind
+        ,Transfering //传输中,包括发送和接收
+        ,Scuccessful //传输成功,包括发送和接收
+        ,Cancel //传输取消,包括发送和接收
+        ,Fail //传输失败,包括发送和接收
+        ,Resend //重新发送
     };
 
     MsgFileChatItem(QGraphicsItem * parent = 0);
@@ -33,16 +35,25 @@ private:
     void updateLayout();
 
 private:
-    QGraphicsTextItem* m_stateItem;
-    QGraphicsTextItem* m_fileNameItem;
-    QGraphicsPixmapItem* m_fileIconItem;
-    QGraphicsPixmapItem* m_btnIconItem;
-//    QGraphicsProxyWidget* m_widget;
-//    QProgressBar* m_progressBar;
+//    QGraphicsTextItem* m_stateItem;
+//    QGraphicsTextItem* m_fileNameItem;
+//    QGraphicsPixmapItem* m_fileIconItem;
+//    QGraphicsPixmapItem* m_btnIconItem;
     QPixmap m_btnPixmap;
+    QPixmap m_filePixmap;
     QRectF m_rect;
     qreal m_proBarWidth;
     State m_state;
+
+    QRect m_filenameTextRect;
+    QRect m_stateTextRect;
+    QRect m_fileicnoRect;
+    QRect m_progressBarRect;
+    QRect m_btnRect;
+
+    QString m_fileName;
+    QString m_stateText;
+    QFont m_textFont;
 };
 
 #endif // MSGFILECHATITEM_H

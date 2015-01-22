@@ -102,15 +102,15 @@ void ZTextEdit::onTextChanged()
 //   cursor.deleteChar();
 //   updateTextCursor(cursor);
 //   return;
-   // QTextLayout ÏÂÒ»¼¶ÊÇ QTextBlock..
-       // QTextBlock µÄÏÂÒ»¼¶ÓÖÊÇQTextFragment..
+   // QTextLayout ä¸‹ä¸€çº§æ˜¯ QTextBlock..
+       // QTextBlock çš„ä¸‹ä¸€çº§åˆæ˜¯QTextFragment..
 //       QTextBlock::iterator it;
 //       for (it = block.begin(); !(it.atEnd()); ++it)
 //       {
 //           QTextFragment fragment = it.fragment();
 //           if (!fragment.isValid())
 //               continue;
-//           // »ñÈ¡ÎÄ±¾
+//           // è·å–æ–‡æœ¬
 //           QString text = fragment.text();
 //           qDebug()<<__LINE__<<text;
 //           if(text.contains(key))
@@ -120,7 +120,7 @@ void ZTextEdit::onTextChanged()
 //           }
 //           if (text.isEmpty())
 //               continue;
-           // »ñÈ¡ÎÄ±¾¸ñÊ½
+           // è·å–æ–‡æœ¬æ ¼å¼
 //           QTextCharFormat chf = fragment.charFormat();
 //           int lineNoBegin = layout->lineForTextPosition(fragment.position() - block.position()).lineNumber();
 //           int lineNoEnd = layout->lineForTextPosition(fragment.position() + fragment.length() - 1 - block.position()).lineNumber();
@@ -128,11 +128,11 @@ void ZTextEdit::onTextChanged()
 //           for (int i = lineNoBegin; i <= lineNoEnd; i++)
 //           {
 //               QTextLine line = layout->lineAt(i);
-//               // ¼ÆËãÊä³öÎ»ÖÃX
+//               // è®¡ç®—è¾“å‡ºä½ç½®X
 //               qreal offset = alignPos(layout->textOption().alignment(), sizeToFill.width(), line.naturalTextWidth());
 //               outPos.setX(outPos.x() + offset);
 //               outPos.setY(baseLine.y());
-//               // »ñÈ¡ÊôÓÚ±¾ĞĞµÄÎÄ±¾
+//               // è·å–å±äºæœ¬è¡Œçš„æ–‡æœ¬
 //               QString textOnLine;
 //               while(j < fragment.position() + fragment.length())
 //               {
@@ -144,13 +144,13 @@ void ZTextEdit::onTextChanged()
 //                       break;
 //                   j++;
 //               }
-//               // »æÖÆÊôÓÚ±¾ĞĞµÄFragmentÖĞµÄÎÄ±¾
+//               // ç»˜åˆ¶å±äºæœ¬è¡Œçš„Fragmentä¸­çš„æ–‡æœ¬
 ////               drawText(painter, outPos, textOnLine, chf, brush);
 //               qDebug()<<__LINE__<<textOnLine;
-//               // ÓĞ»»ĞĞµÄ»°£¬Òª¸üĞÂBaseLineµÄY¼°outPosµÄX
+//               // æœ‰æ¢è¡Œçš„è¯ï¼Œè¦æ›´æ–°BaseLineçš„YåŠoutPosçš„X
 //               if(i < lineNoEnd)
 //               {
-//                   // ¸üĞÂ»ùÏßÎ»ÖÃY
+//                   // æ›´æ–°åŸºçº¿ä½ç½®Y
 //                   baseLine.setY(baseLine.y() + line.height());
 //                   outPos.setX(baseLine.x());
 //               }

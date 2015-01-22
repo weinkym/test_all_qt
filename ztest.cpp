@@ -98,7 +98,7 @@ QGraphicsView *ZTest::getView(const QString &text2)
     view->setScene(scene);
     int height = 0;
     int dY = 30;
-        QString text = "<body>ÔÚÓÒ´°¿ÚÏÔÊ¾ttttttttt<a href=www.baidu.com><font color=red>www.baidu.com</font></a></body>";
+        QString text = "<body>åœ¨å³çª—å£æ˜¾ç¤ºttttttttt<a href=www.baidu.com><font color=red>www.baidu.com</font></a></body>";
     {
 //        ZGraphicsTextItem* textItem = scene->addText(text) ;
              ZGraphicsTextItem* textItem = new ZGraphicsTextItem;
