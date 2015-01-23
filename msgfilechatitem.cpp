@@ -10,20 +10,6 @@ MsgFileChatItem::MsgFileChatItem(QGraphicsItem *parent)
     m_btnPixmap = QPixmap(":/images/search.png");
     m_filePixmap = QPixmap(":/images/cancel.png");
 
-//    QFont font;
-//    font.setPointSize(12);
-//    font.setBold(true);
-//    m_stateItem = new QGraphicsTextItem("file is sending",this);
-//    m_stateItem->setFont(font);
-//    m_fileNameItem = new QGraphicsTextItem("fileName",this);
-//    m_fileNameItem->setFont(font);
-//    m_stateItem->setDefaultTextColor(QColor(Qt::gray));
-
-//    m_fileIconItem = new QGraphicsPixmapItem(this);
-//    m_btnIconItem = new QGraphicsPixmapItem(this);
-//    m_progressBar = new QProgressBar();
-//    m_widget = new QGraphicsProxyWidget(this);
-//    m_widget->setWidget(m_progressBar);
     m_rect = QRectF(0,0,264,70);
     m_proBarWidth = 0;
     m_state = Undefind;
@@ -100,56 +86,41 @@ void MsgFileChatItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton)
     {
-//        if(m_btnIconItem->isVisible())
-//        {
-//            QRectF rect(m_btnIconItem->x()
-//                        ,m_btnIconItem->y()
-//                        ,m_btnIconItem->boundingRect().width()
-//                        ,m_btnIconItem->boundingRect().height());
-//            if(rect.contains(event->pos()))
-//            {
-////                static bool ok = false;
-////                m_btnPixmap = ok ? QPixmap(":/images/1.png") : QPixmap(":/images/4004_4.png");
-////                m_stateItem->setVisible(ok);
-////                ok = !ok;
-                LOG_DEBUG(event->pos());
-                if(m_state == Transfering)
-                {
-                    LOG_DEBUG("transfering");
-                    m_state = Cancel;
-                    this->updateLayout();
-                }
-                else if(m_state == Cancel)
-                {
-                    //todo open file
-                    LOG_DEBUG("cancel");
-                    m_state = Scuccessful;
-                    this->updateLayout();
-                }
-                else if(m_state == Scuccessful)
-                {
-                    //todo open file
-                    LOG_DEBUG("scuccessful");
-                    m_state = Resend;
-                    this->updateLayout();
-                }
-                else if(m_state == Resend)
-                {
-                    //todo open file
-                    LOG_DEBUG("Resend");
-                    m_state = Undefind;
-                    this->updateLayout();
-                }
-                else
-                {
-                    //test
-                    LOG_DEBUG("OTHER");
-                    m_state = Transfering;
-                    this->updateLayout();
-                }
-
-//            }
-//        }
+        LOG_DEBUG(event->pos());
+        if(m_state == Transfering)
+        {
+            LOG_DEBUG("transfering");
+            m_state = Cancel;
+            this->updateLayout();
+        }
+        else if(m_state == Cancel)
+        {
+            //todo open file
+            LOG_DEBUG("cancel");
+            m_state = Scuccessful;
+            this->updateLayout();
+        }
+        else if(m_state == Scuccessful)
+        {
+            //todo open file
+            LOG_DEBUG("scuccessful");
+            m_state = Resend;
+            this->updateLayout();
+        }
+        else if(m_state == Resend)
+        {
+            //todo open file
+            LOG_DEBUG("Resend");
+            m_state = Undefind;
+            this->updateLayout();
+        }
+        else
+        {
+            //test
+            LOG_DEBUG("OTHER");
+            m_state = Transfering;
+            this->updateLayout();
+        }
     }
     return QGraphicsObject::mousePressEvent(event);
 }

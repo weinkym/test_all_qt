@@ -28,17 +28,12 @@ public:
 
 protected:
     virtual void	paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = 0);
-//    bool sceneEventFilter(QGraphicsItem * watched, QEvent * event);
      void mousePressEvent(QGraphicsSceneMouseEvent * event);
 
 private:
     void updateLayout();
 
 private:
-//    QGraphicsTextItem* m_stateItem;
-//    QGraphicsTextItem* m_fileNameItem;
-//    QGraphicsPixmapItem* m_fileIconItem;
-//    QGraphicsPixmapItem* m_btnIconItem;
     QPixmap m_btnPixmap;
     QPixmap m_filePixmap;
     QRectF m_rect;

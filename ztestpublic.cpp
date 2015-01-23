@@ -55,6 +55,60 @@ QString ZTestPublic::getMacAdress()
     return macAddress;
 }
 
+QString ZTestPublic::getSizeString(qint64 size, int prec)
+{
+    int index = 0;
+    QString suffix = "B";
+    double value = 0.0;
+    while(size > 0)
+    {
+        switch (index) {
+        case 0:
+        {
+            suffix = "B";
+            value = size % 1024;
+            break;
+        }
+        case 1:
+        {
+            suffix = "KB";
+            value = value / 1024.0 + size % 1024;
+            break;
+        }
+        case 2:
+        {
+            suffix = "MB";
+            value = value / 1024.0 + size % 1024;
+            break;
+        }
+        case 3:
+        {
+            suffix = "GB";
+            value = value / 1024.0 + size % 1024;
+            break;
+        }
+        case 4:
+        {
+            suffix = "TB";
+            value = value / 1024.0 + size % 1024;
+            break;
+        }
+        case 5:
+        {
+            suffix = "TB";
+            value = value + size * 1024;
+            return QString("%1%2").arg(QString::number(value,'f',prec)).arg(suffix);
+            break;
+        }
+        default:
+            break;
+        }
+        size /= 1024;
+        index++;
+    }
+    return QString("%1%2").arg(QString::number(value,'f',prec)).arg(suffix);
+}
+
 void ZTestPublic::addResultMap(const QMap<int, QString> &srcMap, QMap<int,QPair<QString,bool> >& resultMap, bool isLink)
 {
     QMapIterator<int,QString> inter(srcMap);

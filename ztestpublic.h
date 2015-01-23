@@ -39,6 +39,7 @@ public:
     static QString toLink(const QString& src);
     //======================================
     static QString getMacAdress();
+    static QString getSizeString(qint64 size, int prec);
 
 private:
     //======================================
